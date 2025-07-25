@@ -17,5 +17,4 @@ A sample of robot framework when running automation testing on webapp and serve 
 Clone the repo:
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/htt261094/Robot_Framework_Practice
