@@ -17,8 +17,17 @@ User input username
 User input password
     Input Password    ${Password_txtbox}    ${Password}
 
+User input wrong username
+    Input Text    ${Username_txtbox}    ${Wrong_Username}
+
+User input wrong password
+    Input Text    ${Password_txtbox}    ${Wrong_Password}
+
 User click login button
     Click Button    ${Login_btn}
+
+User see login error message
+    Element Text Should Be    ${Login_error_Message}    Incorrect username or password. Try again!!
 
 Close_Browser
     Close All Browsers
