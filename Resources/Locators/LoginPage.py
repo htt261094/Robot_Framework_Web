@@ -1,0 +1,5 @@
+Username_txtbox = "//input[@id='user']"
+Password_txtbox = "//input[@id='password']"
+Login_btn = "//button[@id='login']"
+Register_link = "//a[contains(.,'Register')]"
+RememberMe_checkbox = "//input[@type='checkbox']"

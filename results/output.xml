@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.1 (Python 3.13.3 on win32)" generated="2025-07-24T16:01:05.365170" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot Framework Web" source="C:\Users\ECO1404-THANHHT\Desktop\Robot_Framework_Web">
+<suite id="s1-s1" name="Tests" source="C:\Users\ECO1404-THANHHT\Desktop\Robot_Framework_Web\Tests">
+<suite id="s1-s1-s1" name="OrderPizza" source="C:\Users\ECO1404-THANHHT\Desktop\Robot_Framework_Web\Tests\OrderPizza.robot">
+<test id="s1-s1-s1-t1" name="User order pizza successfully" line="7">
+<kw name="Open page" owner="LoginPage">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-24T16:01:05.552994" level="INFO">Opening browser 'chrome' to base url 'https://play1.automationcamp.ir/login.html'.</msg>
+<msg time="2025-07-24T16:01:05.984166" level="WARN">The chromedriver version (137.0.7151.119) detected in PATH at C:\Users\ECO1404-THANHHT\Desktop\Robot_Framework_Web\chromedriver.exe might not be compatible with the detected chrome version (138.0.7204.168); currently, chromedriver 138.0.7204.168 is recommended for chrome 138.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${Base_URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-24T16:01:05.552432" elapsed="3.107992"/>
+</kw>
+<status status="PASS" start="2025-07-24T16:01:05.551260" elapsed="3.109411"/>
+</kw>
+<kw name="User input username" owner="LoginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-24T16:01:08.662442" level="INFO">Typing text 'admin' into text field '//input[@id='user']'.</msg>
+<arg>${Username_txtbox}</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-24T16:01:08.661758" elapsed="0.133459"/>
+</kw>
+<status status="PASS" start="2025-07-24T16:01:08.661106" elapsed="0.134308"/>
+</kw>
+<kw name="User input password" owner="LoginPage">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-07-24T16:01:08.797022" level="INFO">Typing password into text field '//input[@id='password']'.</msg>
+<msg time="2025-07-24T16:01:08.844945" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${Password_txtbox}</arg>
+<arg>${Password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-24T16:01:08.796547" elapsed="0.101259"/>
+</kw>
+<status status="PASS" start="2025-07-24T16:01:08.795898" elapsed="0.102071"/>
+</kw>
+<kw name="User click login button" owner="LoginPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-24T16:01:08.899399" level="INFO">Clicking button '//button[@id='login']'.</msg>
+<arg>${Login_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-24T16:01:08.898918" elapsed="0.380011"/>
+</kw>
+<status status="PASS" start="2025-07-24T16:01:08.898353" elapsed="0.381225"/>
+</kw>
+<kw name="User choose Medium Size" owner="MenuPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-24T16:01:09.281898" level="INFO">Clicking element '//input[@type='radio' and @value='MEDIUM']'.</msg>
+<arg>${PizzaMedium_radioBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-24T16:01:09.281439" elapsed="0.092196"/>
+</kw>
+<status status="PASS" start="2025-07-24T16:01:09.280574" elapsed="0.093238"/>
+</kw>
+<kw name="User choose Supreme Flavor" owner="MenuPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-24T16:01:09.377593" level="INFO">Clicking element '//select[@id='select_flavor']'.</msg>
+<arg>${Flavor_dropdownList}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-24T16:01:09.376501" elapsed="0.087724"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-24T16:01:09.465084" level="INFO">Clicking element '//option[@value='Supreme']'.</msg>
+<arg>${SupremeFlavor_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-24T16:01:09.464474" elapsed="0.060740"/>
+</kw>
+<status status="PASS" start="2025-07-24T16:01:09.374208" elapsed="0.151220"/>
+</kw>
+<kw name="User choose Buffalo Sauce" owner="MenuPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-24T16:01:09.526778" level="INFO">Clicking element '//input[@type='radio' and @value='BUFFALO']'.</msg>
+<arg>${BuffaloSauce_radioBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-24T16:01:09.526427" elapsed="0.116221"/>
+</kw>
+<status status="PASS" start="2025-07-24T16:01:09.525898" elapsed="0.116974"/>
+</kw>
+<kw name="User choose Green Olive topping" owner="MenuPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-24T16:01:09.644104" level="INFO">Clicking element '//input[@type='checkbox' and @id='green_olive']'.</msg>
+<arg>${GreenOliveTopping_checkbox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-24T16:01:09.643783" elapsed="0.079266"/>
+</kw>
+<status status="PASS" start="2025-07-24T16:01:09.643303" elapsed="0.079955"/>
+</kw>
+<kw name="User choose Tomatoes topping" owner="MenuPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-24T16:01:09.724662" level="INFO">Clicking element '//input[@type='checkbox' and @id='tomoto']'.</msg>
+<arg>${TomatoesTopping_checkbox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-24T16:01:09.724334" elapsed="0.083108"/>
+</kw>
+<status status="PASS" start="2025-07-24T16:01:09.723746" elapsed="0.083901"/>
+</kw>
+<kw name="User input quantity" owner="MenuPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-24T16:01:09.809229" level="INFO">Typing text '3' into text field '//input[@id='quantity']'.</msg>
+<arg>${Quanity_txtBox}</arg>
+<arg>3</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-24T16:01:09.808910" elapsed="0.080398"/>
+</kw>
+<status status="PASS" start="2025-07-24T16:01:09.808357" elapsed="0.081120"/>
+</kw>
+<kw name="User add pizzas to cart" owner="MenuPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-24T16:01:09.890858" level="INFO">Clicking button '//button[@id='submit_button']'.</msg>
+<arg>${AddToCart_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-24T16:01:09.890361" elapsed="0.130787"/>
+</kw>
+<status status="PASS" start="2025-07-24T16:01:09.889853" elapsed="0.131927"/>
+</kw>
+<kw name="Order pizza successfully" owner="MenuPage">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-24T16:01:20.023678" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-24T16:01:10.022871" elapsed="10.001794"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-07-24T16:01:20.026069" level="INFO">Verifying element '//h2[@id='added_message']' contains exact text 'Pizza added to the cart!'.</msg>
+<arg>${Confirmation_txt}</arg>
+<arg>Pizza added to the cart!</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-07-24T16:01:20.025055" elapsed="0.111309"/>
+</kw>
+<status status="PASS" start="2025-07-24T16:01:10.022311" elapsed="10.114726"/>
+</kw>
+<kw name="Close_Browser" owner="LoginPage">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-07-24T16:01:20.139041" elapsed="6.566431"/>
+</kw>
+<status status="PASS" start="2025-07-24T16:01:20.137874" elapsed="6.567878"/>
+</kw>
+<status status="PASS" start="2025-07-24T16:01:05.549935" elapsed="21.156239"/>
+</test>
+<status status="PASS" start="2025-07-24T16:01:05.395942" elapsed="21.312236"/>
+</suite>
+<status status="PASS" start="2025-07-24T16:01:05.392768" elapsed="21.316707"/>
+</suite>
+<status status="PASS" start="2025-07-24T16:01:05.369776" elapsed="21.342758"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Robot Framework Web" id="s1" pass="1" fail="0" skip="0">Robot Framework Web</stat>
+<stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">Robot Framework Web.Tests</stat>
+<stat name="OrderPizza" id="s1-s1-s1" pass="1" fail="0" skip="0">Robot Framework Web.Tests.OrderPizza</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-07-24T16:01:05.984166" level="WARN">The chromedriver version (137.0.7151.119) detected in PATH at C:\Users\ECO1404-THANHHT\Desktop\Robot_Framework_Web\chromedriver.exe might not be compatible with the detected chrome version (138.0.7204.168); currently, chromedriver 138.0.7204.168 is recommended for chrome 138.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
