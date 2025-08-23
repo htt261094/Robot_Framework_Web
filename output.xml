@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on darwin)" generated="2025-08-23T22:56:17.856985" rpa="false" schemaversion="5">
+<suite id="s1" name="01 Login" source="/Users/thanhht/Work/Robot_Framework_Web/Tests/01_Login.robot">
+<test id="s1-t1" name="User login with Wrong Account information" line="7">
+<kw name="Open Browser From Config" owner="hooks">
+<kw name="Read Config" owner="ReadJson">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2025-08-23T22:56:17.964367" level="INFO">${json} = {'UAT': {'URL': 'http://10.0.0.223:4000/', 'Browser': ['Chrome', 'FireFox', 'Safari']}, 'SIT': {'URL': 'http://10.0.0.223:5173/', 'Browser': ['Chrome', 'FireFox', 'Safari']}}</msg>
+<var>${json}</var>
+<arg>/Users/thanhht/Work/Robot_Framework_Web/Resources/Ultis/../TestData/evn.json</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2025-08-23T22:56:17.964144" elapsed="0.000238"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2025-08-23T22:56:17.971715" level="INFO">${url_list} = ['http://10.0.0.223:5173/']</msg>
+<var>${url_list}</var>
+<arg>${json}</arg>
+<arg>$.${ENV}.URL</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2025-08-23T22:56:17.964432" elapsed="0.007298"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2025-08-23T22:56:17.978380" level="INFO">${browser_list} = [['Chrome', 'FireFox', 'Safari']]</msg>
+<var>${browser_list}</var>
+<arg>${json}</arg>
+<arg>$.${ENV}.Browser</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2025-08-23T22:56:17.971779" elapsed="0.006619"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-23T22:56:17.978700" level="INFO">${url} = http://10.0.0.223:5173/</msg>
+<var>${url}</var>
+<arg>${url_list[0]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-23T22:56:17.978464" elapsed="0.000247"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-23T22:56:17.978919" level="INFO">${browser} = ['Chrome', 'FireFox', 'Safari']</msg>
+<var>${browser}</var>
+<arg>${browser_list[0]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-23T22:56:17.978751" elapsed="0.000178"/>
+</kw>
+<return>
+<value>${url}</value>
+<value>${browser}</value>
+<status status="PASS" start="2025-08-23T22:56:17.978952" elapsed="0.000024"/>
+</return>
+<msg time="2025-08-23T22:56:17.979039" level="INFO">${url} = http://10.0.0.223:5173/</msg>
+<msg time="2025-08-23T22:56:17.979053" level="INFO">${browsers} = ['Chrome', 'FireFox', 'Safari']</msg>
+<var>${url}</var>
+<var>${browsers}</var>
+<arg>${ENV}</arg>
+<status status="PASS" start="2025-08-23T22:56:17.963886" elapsed="0.015174"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-23T22:56:17.979189" level="INFO">Opening browser 'chrome' to base url 'http://10.0.0.223:5173/'.</msg>
+<arg>${url}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-23T22:56:17.979106" elapsed="18.141755"/>
+</kw>
+<arg>SIT</arg>
+<arg>chrome</arg>
+<status status="PASS" start="2025-08-23T22:56:17.963745" elapsed="18.157489"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-23T22:56:36.121914" elapsed="0.371517"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.3</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-08-23T22:56:36.493741" elapsed="0.000360"/>
+</kw>
+<kw name="Login with wrong account" owner="LoginPage">
+<kw name="Read Account Detail" owner="ReadJson">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2025-08-23T22:56:36.495357" level="INFO">${json} = {'Edit': {'username': 'demo2', 'password': '1'}, 'View': {'username': 'demo1', 'password': '1'}, 'Check': {'username': 'cool1', 'password': '1'}, 'Delete': {'username': 'acm', 'password': '1'}, 'No_Pe...</msg>
+<var>${json}</var>
+<arg>/Users/thanhht/Work/Robot_Framework_Web/Resources/Ultis/../TestData/account.json</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2025-08-23T22:56:36.494798" elapsed="0.000606"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2025-08-23T22:56:36.504996" level="INFO">${usernames_list} = ['testAccount']</msg>
+<var>${usernames_list}</var>
+<arg>${json}</arg>
+<arg>$.${Permission}.username</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2025-08-23T22:56:36.495485" elapsed="0.009529"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2025-08-23T22:56:36.512982" level="INFO">${passwords_list} = ['123']</msg>
+<var>${passwords_list}</var>
+<arg>${json}</arg>
+<arg>$.${Permission}.password</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2025-08-23T22:56:36.505073" elapsed="0.007924"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-23T22:56:36.513380" level="INFO">${username} = testAccount</msg>
+<var>${username}</var>
+<arg>${usernames_list[0]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-23T22:56:36.513053" elapsed="0.000341"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-23T22:56:36.513640" level="INFO">${password} = 123</msg>
+<var>${password}</var>
+<arg>${passwords_list[0]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-23T22:56:36.513439" elapsed="0.000213"/>
+</kw>
+<return>
+<value>${username}</value>
+<value>${password}</value>
+<status status="PASS" start="2025-08-23T22:56:36.513691" elapsed="0.000042"/>
+</return>
+<msg time="2025-08-23T22:56:36.513812" level="INFO">${username} = testAccount</msg>
+<msg time="2025-08-23T22:56:36.513828" level="INFO">${password} = 123</msg>
+<var>${username}</var>
+<var>${password}</var>
+<arg>Wrong_account</arg>
+<status status="PASS" start="2025-08-23T22:56:36.494661" elapsed="0.019176"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-23T22:56:36.514193" level="INFO">Typing text 'testAccount' into text field '//input[@id='username']'.</msg>
+<arg>${username_txtbox}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T22:56:36.513888" elapsed="1.049186"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-23T22:56:37.563970" level="INFO">Typing text '123' into text field '//input[@id='password']'.</msg>
+<arg>${password_txtbox}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T22:56:37.563498" elapsed="0.970690"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-23T22:56:38.535536" level="INFO">Clicking element '//button[contains(.,'Sign in')]'.</msg>
+<arg>${signin_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T22:56:38.534857" elapsed="0.696973"/>
+</kw>
+<status status="PASS" start="2025-08-23T22:56:36.494362" elapsed="2.738013"/>
+</kw>
+<kw name="User see error message" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${error_message}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T22:56:39.233818" elapsed="1.151459"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-23T22:56:40.386159" level="INFO">Verifying element '//div[@role='alert']' contains exact text 'Request failed with status code 400'.</msg>
+<arg>${error_message}</arg>
+<arg>Request failed with status code 400</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-08-23T22:56:40.385764" elapsed="0.635660"/>
+</kw>
+<status status="PASS" start="2025-08-23T22:56:39.233097" elapsed="1.788520"/>
+</kw>
+<status status="PASS" start="2025-08-23T22:56:17.963494" elapsed="23.058593"/>
+</test>
+<test id="s1-t2" name="User login successfull with all permission account" line="14">
+<kw name="Login with All Permission" owner="LoginPage">
+<kw name="Read Account Detail" owner="ReadJson">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2025-08-23T22:56:41.024166" level="INFO">${json} = {'Edit': {'username': 'demo2', 'password': '1'}, 'View': {'username': 'demo1', 'password': '1'}, 'Check': {'username': 'cool1', 'password': '1'}, 'Delete': {'username': 'acm', 'password': '1'}, 'No_Pe...</msg>
+<var>${json}</var>
+<arg>/Users/thanhht/Work/Robot_Framework_Web/Resources/Ultis/../TestData/account.json</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2025-08-23T22:56:41.023708" elapsed="0.000497"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2025-08-23T22:56:41.042011" level="INFO">${usernames_list} = ['test1']</msg>
+<var>${usernames_list}</var>
+<arg>${json}</arg>
+<arg>$.${Permission}.username</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2025-08-23T22:56:41.024321" elapsed="0.017723"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2025-08-23T22:56:41.052355" level="INFO">${passwords_list} = ['1']</msg>
+<var>${passwords_list}</var>
+<arg>${json}</arg>
+<arg>$.${Permission}.password</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2025-08-23T22:56:41.042158" elapsed="0.010216"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-23T22:56:41.052728" level="INFO">${username} = test1</msg>
+<var>${username}</var>
+<arg>${usernames_list[0]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-23T22:56:41.052440" elapsed="0.000303"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-23T22:56:41.053037" level="INFO">${password} = 1</msg>
+<var>${password}</var>
+<arg>${passwords_list[0]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-23T22:56:41.052797" elapsed="0.000254"/>
+</kw>
+<return>
+<value>${username}</value>
+<value>${password}</value>
+<status status="PASS" start="2025-08-23T22:56:41.053080" elapsed="0.000026"/>
+</return>
+<msg time="2025-08-23T22:56:41.053190" level="INFO">${username} = test1</msg>
+<msg time="2025-08-23T22:56:41.053209" level="INFO">${password} = 1</msg>
+<var>${username}</var>
+<var>${password}</var>
+<arg>All_Permission</arg>
+<status status="PASS" start="2025-08-23T22:56:41.023453" elapsed="0.029767"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-23T22:56:41.053383" level="INFO">Typing text 'test1' into text field '//input[@id='username']'.</msg>
+<arg>${username_txtbox}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T22:56:41.053274" elapsed="0.966169"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-23T22:56:42.019723" level="INFO">Typing text '1' into text field '//input[@id='password']'.</msg>
+<arg>${password_txtbox}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T22:56:42.019568" elapsed="0.951838"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-23T22:56:42.972597" level="INFO">Clicking element '//button[contains(.,'Sign in')]'.</msg>
+<arg>${signin_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T22:56:42.971948" elapsed="0.668797"/>
+</kw>
+<status status="PASS" start="2025-08-23T22:56:41.023020" elapsed="2.618035"/>
+</kw>
+<kw name="Select tenant" owner="LoginPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${tenant_ddl}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-23T22:56:43.642770" elapsed="1.152987"/>
+</kw>
+<if>
+<branch type="IF" condition="${tetantID} == 1">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-23T22:56:44.797624" level="INFO">Clicking element '//select[@id='tenant-select']'.</msg>
+<arg>${tenant_ddl}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T22:56:44.797119" elapsed="0.658793"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-23T22:56:45.457060" level="INFO">Clicking element '//option[@value='0001']'.</msg>
+<arg>${tetant0001_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-23T22:56:45.456450" elapsed="0.676793"/>
+</kw>
+<status status="PASS" start="2025-08-23T22:56:44.796377" elapsed="1.337146"/>
+</branch>
+<branch type="ELSE IF" condition="${tetantID} == 2">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${tenant_ddl}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-08-23T22:56:46.133855" elapsed="0.000039"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${tetant0002_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-08-23T22:56:46.134000" elapsed="0.000014"/>
+</kw>
+<status status="NOT RUN" start="2025-08-23T22:56:46.133600" elapsed="0.000431"/>
+</branch>
+<branch type="ELSE IF" condition="${tetantID} == 3">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${tenant_ddl}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-08-23T22:56:46.134098" elapsed="0.000009"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${tetant0003_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-08-23T22:56:46.134139" elapsed="0.000007"/>
+</kw>
+<status status="NOT RUN" start="2025-08-23T22:56:46.134052" elapsed="0.000107"/>
+</branch>
+<branch type="ELSE IF" condition="${tetantID} == 4">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${tenant_ddl}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-08-23T22:56:46.134206" elapsed="0.000007"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${tetant0004_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-08-23T22:56:46.134243" elapsed="0.000008"/>
+</kw>
+<status status="NOT RUN" start="2025-08-23T22:56:46.134172" elapsed="0.000091"/>
+</branch>
+<branch type="ELSE IF" condition="${tetantID} == 5">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${tenant_ddl}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-08-23T22:56:46.134307" elapsed="0.000008"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${tetant0005_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-08-23T22:56:46.134344" elapsed="0.000008"/>
+</kw>
+<status status="NOT RUN" start="2025-08-23T22:56:46.134275" elapsed="0.000090"/>
+</branch>
+<branch type="ELSE IF" condition="${tetantID} == 6">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${tenant_ddl}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-08-23T22:56:46.134906" elapsed="0.000087"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${tetant0006_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-08-23T22:56:46.135125" elapsed="0.000018"/>
+</kw>
+<status status="NOT RUN" start="2025-08-23T22:56:46.134415" elapsed="0.000751"/>
+</branch>
+<status status="PASS" start="2025-08-23T22:56:44.796162" elapsed="1.339021"/>
+</if>
+<arg>1</arg>
+<status status="PASS" start="2025-08-23T22:56:43.642028" elapsed="2.493196"/>
+</kw>
+<status status="PASS" start="2025-08-23T22:56:41.022435" elapsed="5.112897"/>
+</test>
+<status status="PASS" start="2025-08-23T22:56:17.857422" elapsed="28.283746"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="01 Login" id="s1" pass="2" fail="0" skip="0">01 Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

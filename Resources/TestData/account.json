@@ -30,5 +30,9 @@
     "All_Permission":{
         "username":"test1",
         "password":"1"
+    },
+    "Wrong_account":{
+        "username":"testAccount",
+        "password":"123"
     }
 }

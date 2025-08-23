@@ -5,7 +5,7 @@ import os
 TEST_PATH = os.path.join("Tests", "LoginTest.robot")
 
 # Optional: Customize output paths
-OUTPUT_DIR = "results"
+OUTPUT_DIR = "../results"
 LOG_NAME = "log.html"
 REPORT_NAME = "report.html"
 OUTPUT_NAME = "output.xml"

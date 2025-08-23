@@ -11,3 +11,6 @@ tetant0003_option = "//option[@value='0003']"
 tetant0004_option = "//option[@value='0004']"
 tetant0005_option = "//option[@value='0005']"
 tetant0006_option = "//option[@value='0006']"
+
+#Error Message
+error_message = "//div[@role='alert']"

@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    OperatingSystem
-Variables    ../Locators/LoginPage.py
+Variables    ../Locators/LoginPageLocators.py
 Resource    ../Ultis/ReadJson.robot
 
 *** Keywords ***
@@ -52,6 +52,16 @@ Login with All Permission
     Input Text    ${username_txtbox}    ${username}
     Input Text    ${password_txtbox}    ${password}
     Click Element    ${signin_btn}
+
+Login with wrong account
+    ${username}    ${password}=    Read Account Detail    Wrong_account
+    Input Text    ${username_txtbox}    ${username}
+    Input Text    ${password_txtbox}    ${password}
+    Click Element    ${signin_btn}
+
+User see error message
+    Wait Until Element Is Visible    ${error_message}
+    Element Text Should Be    ${error_message}    Request failed with status code 400
 
 Select tenant
     [Arguments]    ${tetantID}
