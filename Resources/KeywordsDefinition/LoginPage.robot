@@ -1,33 +1,77 @@
 *** Settings ***
 Library    SeleniumLibrary
-Variables    ../Test Data/TestData.py
+Library    OperatingSystem
 Variables    ../Locators/LoginPage.py
-
-*** Variables ***
-${Base_URL}    https://play1.automationcamp.ir/login.html
-${Browser}    chrome
+Resource    ../Ultis/ReadJson.robot
 
 *** Keywords ***
-Open page
-    Open Browser    ${Base_URL}    ${Browser}
+Login with Edit permission
+    ${username}    ${password}=    Read Account Detail    Edit
+    Input Text    ${username_txtbox}    ${username}
+    Input Text    ${password_txtbox}    ${password}
+    Click Element    ${signin_btn}
 
-User input username
-    Input Text    ${Username_txtbox}    ${Username}
+Login with View persmission
+    ${username}    ${password}=    Read Account Detail    View
+    Input Text    ${username_txtbox}    ${username}
+    Input Text    ${password_txtbox}    ${password}
+    Click Element    ${signin_btn}
 
-User input password
-    Input Password    ${Password_txtbox}    ${Password}
+Login with Check permission
+    ${username}    ${password}=    Read Account Detail    Check
+    Input Text    ${username_txtbox}    ${username}
+    Input Text    ${password_txtbox}    ${password}
+    Click Element    ${signin_btn}
 
-User input wrong username
-    Input Text    ${Username_txtbox}    ${Wrong_Username}
+Login with Delete permission
+    ${username}    ${password}=    Read Account Detail    Delete
+    Input Text    ${username_txtbox}    ${username}
+    Input Text    ${password_txtbox}    ${password}
+    Click Element    ${signin_btn}
 
-User input wrong password
-    Input Text    ${Password_txtbox}    ${Wrong_Password}
+Login with No Permission
+    ${username}    ${password}=    Read Account Detail    No_Permission
+    Input Text    ${username_txtbox}    ${username}
+    Input Text    ${password_txtbox}    ${password}
+    Click Element    ${signin_btn}
 
-User click login button
-    Click Button    ${Login_btn}
+Login with View and Check permission
+    ${username}    ${password}=    Read Account Detail    View_n_Check
+    Input Text    ${username_txtbox}    ${username}
+    Input Text    ${password_txtbox}    ${password}
+    Click Element    ${signin_btn}
 
-User see login error message
-    Element Text Should Be    ${Login_error_Message}    Incorrect username or password. Try again!!
+Login with Edit and Check permission
+    ${username}    ${password}=    Read Account Detail    Edit_n_Check
+    Input Text    ${username_txtbox}    ${username}
+    Input Text    ${password_txtbox}    ${password}
+    Click Element    ${signin_btn}
 
-Close_Browser
-    Close All Browsers
+Login with All Permission
+    ${username}    ${password}=    Read Account Detail    All_Permission
+    Input Text    ${username_txtbox}    ${username}
+    Input Text    ${password_txtbox}    ${password}
+    Click Element    ${signin_btn}
+
+Select tenant
+    [Arguments]    ${tetantID}
+    Wait Until Element Is Visible    ${tenant_ddl}
+    IF    ${tetantID} == 1
+        Click Element    ${tenant_ddl}
+        Click Element    ${tetant0001_option}
+    ELSE IF    ${tetantID} == 2
+        Click Element    ${tenant_ddl}
+        Click Element    ${tetant0002_option}     
+    ELSE IF    ${tetantID} == 3
+        Click Element    ${tenant_ddl}
+        Click Element    ${tetant0003_option}      
+    ELSE IF    ${tetantID} == 4
+        Click Element    ${tenant_ddl}
+        Click Element    ${tetant0004_option} 
+    ELSE IF    ${tetantID} == 5
+        Click Element    ${tenant_ddl}
+        Click Element    ${tetant0005_option}
+    ELSE IF    ${tetantID} == 6
+        Click Element    ${tenant_ddl}
+        Click Element    ${tetant0006_option}
+    END

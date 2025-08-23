@@ -1,0 +1,34 @@
+{
+    "Edit":{
+        "username":"demo2",
+        "password":"1"
+    },
+    "View":{
+        "username":"demo1",
+        "password":"1"
+    },
+    "Check":{
+        "username":"cool1",
+        "password":"1"
+    },
+    "Delete":{
+        "username":"acm",
+        "password":"1"
+    },
+    "No_Permission":{
+        "username":"advisor",
+        "password":"1"
+    },
+    "View_n_Check":{
+        "username":"hk.maker",
+        "password":"1"
+    },
+    "Edit_n_Check":{
+        "username":"hk.checker",
+        "password":"1"
+    },
+    "All_Permission":{
+        "username":"test1",
+        "password":"1"
+    }
+}
