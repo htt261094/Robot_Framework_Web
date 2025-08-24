@@ -1,252 +1,566 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.7 on darwin)" generated="2025-08-23T21:47:01.857412" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.7 on darwin)" generated="2025-08-24T10:47:28.260767" rpa="false" schemaversion="5">
 <suite id="s1" name="Robot Framework Web" source="/Users/thanhht/Work/Robot_Framework_Web">
 <suite id="s1-s1" name="Tests" source="/Users/thanhht/Work/Robot_Framework_Web/Tests">
-<suite id="s1-s1-s1" name="01 Login" source="/Users/thanhht/Work/Robot_Framework_Web/Tests/01_Login.robot">
-<test id="s1-s1-s1-t1" name="User login successfull with all permission account" line="7">
+<suite id="s1-s1-s1" name="02 CustomerMangement" source="/Users/thanhht/Work/Robot_Framework_Web/Tests/02_CustomerMangement.robot">
+<test id="s1-s1-s1-t1" name="User go to Approved Customer Management screen and verify sort by Updated is default" line="9">
 <kw name="Open Browser From Config" owner="hooks">
 <kw name="Read Config" owner="ReadJson">
 <kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2025-08-23T21:47:01.978254" level="INFO">${json} = {'UAT': {'URL': 'http://10.0.0.223:4000/', 'Browser': ['Chrome', 'FireFox', 'Safari']}, 'SIT': {'URL': 'http://10.0.0.223:5173/', 'Browser': ['Chrome', 'FireFox', 'Safari']}}</msg>
+<msg time="2025-08-24T10:47:28.396290" level="INFO">${json} = {'UAT': {'URL': 'http://10.0.0.223:4000/', 'Browser': ['Chrome', 'FireFox', 'Safari']}, 'SIT': {'URL': 'http://10.0.0.223:5173/', 'Browser': ['Chrome', 'FireFox', 'Safari']}}</msg>
 <var>${json}</var>
 <arg>/Users/thanhht/Work/Robot_Framework_Web/Resources/Ultis/../TestData/evn.json</arg>
 <doc>Load JSON from file.</doc>
-<status status="PASS" start="2025-08-23T21:47:01.977967" elapsed="0.000340"/>
+<status status="PASS" start="2025-08-24T10:47:28.396020" elapsed="0.000323"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-08-23T21:47:01.986477" level="INFO">${url_list} = ['http://10.0.0.223:5173/']</msg>
+<msg time="2025-08-24T10:47:28.404078" level="INFO">${url_list} = ['http://10.0.0.223:5173/']</msg>
 <var>${url_list}</var>
 <arg>${json}</arg>
 <arg>$.${ENV}.URL</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-08-23T21:47:01.978387" elapsed="0.008148"/>
+<status status="PASS" start="2025-08-24T10:47:28.396429" elapsed="0.007695"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-08-23T21:47:01.993219" level="INFO">${browser_list} = [['Chrome', 'FireFox', 'Safari']]</msg>
+<msg time="2025-08-24T10:47:28.410584" level="INFO">${browser_list} = [['Chrome', 'FireFox', 'Safari']]</msg>
 <var>${browser_list}</var>
 <arg>${json}</arg>
 <arg>$.${ENV}.Browser</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-08-23T21:47:01.986621" elapsed="0.006643"/>
+<status status="PASS" start="2025-08-24T10:47:28.404209" elapsed="0.006414"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-08-23T21:47:01.993627" level="INFO">${url} = http://10.0.0.223:5173/</msg>
+<msg time="2025-08-24T10:47:28.410997" level="INFO">${url} = http://10.0.0.223:5173/</msg>
 <var>${url}</var>
 <arg>${url_list[0]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-08-23T21:47:01.993341" elapsed="0.000330"/>
+<status status="PASS" start="2025-08-24T10:47:28.410703" elapsed="0.000337"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-08-23T21:47:01.993958" level="INFO">${browser} = ['Chrome', 'FireFox', 'Safari']</msg>
+<msg time="2025-08-24T10:47:28.411345" level="INFO">${browser} = ['Chrome', 'FireFox', 'Safari']</msg>
 <var>${browser}</var>
 <arg>${browser_list[0]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-08-23T21:47:01.993732" elapsed="0.000277"/>
+<status status="PASS" start="2025-08-24T10:47:28.411103" elapsed="0.000292"/>
 </kw>
 <return>
 <value>${url}</value>
 <value>${browser}</value>
-<status status="PASS" start="2025-08-23T21:47:01.994051" elapsed="0.000046"/>
+<status status="PASS" start="2025-08-24T10:47:28.411439" elapsed="0.000045"/>
 </return>
-<msg time="2025-08-23T21:47:01.994178" level="INFO">${url} = http://10.0.0.223:5173/</msg>
-<msg time="2025-08-23T21:47:01.994212" level="INFO">${browsers} = ['Chrome', 'FireFox', 'Safari']</msg>
+<msg time="2025-08-24T10:47:28.411564" level="INFO">${url} = http://10.0.0.223:5173/</msg>
+<msg time="2025-08-24T10:47:28.411603" level="INFO">${browsers} = ['Chrome', 'FireFox', 'Safari']</msg>
 <var>${url}</var>
 <var>${browsers}</var>
 <arg>${ENV}</arg>
-<status status="PASS" start="2025-08-23T21:47:01.977655" elapsed="0.016581"/>
+<status status="PASS" start="2025-08-24T10:47:28.395697" elapsed="0.015929"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-08-23T21:47:01.994441" level="INFO">Opening browser 'chrome' to base url 'http://10.0.0.223:5173/'.</msg>
+<msg time="2025-08-24T10:47:28.411833" level="INFO">Opening browser 'chrome' to base url 'http://10.0.0.223:5173/'.</msg>
 <arg>${url}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-08-23T21:47:01.994308" elapsed="19.450440"/>
+<status status="PASS" start="2025-08-24T10:47:28.411704" elapsed="23.233662"/>
 </kw>
 <arg>SIT</arg>
 <arg>chrome</arg>
-<status status="PASS" start="2025-08-23T21:47:01.977438" elapsed="19.468033"/>
+<status status="PASS" start="2025-08-24T10:47:28.395475" elapsed="23.250729"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-08-23T21:47:21.446671" elapsed="0.404251"/>
+<status status="PASS" start="2025-08-24T10:47:51.647200" elapsed="0.384691"/>
 </kw>
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>0.3</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2025-08-23T21:47:21.851235" elapsed="0.000524"/>
+<status status="PASS" start="2025-08-24T10:47:52.032138" elapsed="0.000283"/>
 </kw>
 <kw name="Login with All Permission" owner="LoginPage">
 <kw name="Read Account Detail" owner="ReadJson">
 <kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2025-08-23T21:47:21.853668" level="INFO">${json} = {'Edit': {'username': 'demo2', 'password': '1'}, 'View': {'username': 'demo1', 'password': '1'}, 'Check': {'username': 'cool1', 'password': '1'}, 'Delete': {'username': 'acm', 'password': '1'}, 'No_Pe...</msg>
+<msg time="2025-08-24T10:47:52.033416" level="INFO">${json} = {'Edit': {'username': 'demo2', 'password': '1'}, 'View': {'username': 'demo1', 'password': '1'}, 'Check': {'username': 'cool1', 'password': '1'}, 'Delete': {'username': 'acm', 'password': '1'}, 'No_Pe...</msg>
 <var>${json}</var>
 <arg>/Users/thanhht/Work/Robot_Framework_Web/Resources/Ultis/../TestData/account.json</arg>
 <doc>Load JSON from file.</doc>
-<status status="PASS" start="2025-08-23T21:47:21.852894" elapsed="0.000976"/>
+<status status="PASS" start="2025-08-24T10:47:52.033032" elapsed="0.000508"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-08-23T21:47:21.888735" level="INFO">${usernames_list} = ['test1']</msg>
+<msg time="2025-08-24T10:47:52.043116" level="INFO">${usernames_list} = ['test1']</msg>
 <var>${usernames_list}</var>
 <arg>${json}</arg>
 <arg>$.${Permission}.username</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-08-23T21:47:21.854110" elapsed="0.035044"/>
+<status status="PASS" start="2025-08-24T10:47:52.033628" elapsed="0.009559"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-08-23T21:47:21.918837" level="INFO">${passwords_list} = ['1']</msg>
+<msg time="2025-08-24T10:47:52.051553" level="INFO">${passwords_list} = ['1']</msg>
 <var>${passwords_list}</var>
 <arg>${json}</arg>
 <arg>$.${Permission}.password</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-08-23T21:47:21.889423" elapsed="0.029581"/>
+<status status="PASS" start="2025-08-24T10:47:52.043298" elapsed="0.008311"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-08-23T21:47:21.920092" level="INFO">${username} = test1</msg>
+<msg time="2025-08-24T10:47:52.052047" level="INFO">${username} = test1</msg>
 <var>${username}</var>
 <arg>${usernames_list[0]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-08-23T21:47:21.919355" elapsed="0.000907"/>
+<status status="PASS" start="2025-08-24T10:47:52.051707" elapsed="0.000381"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-08-23T21:47:21.920891" level="INFO">${password} = 1</msg>
+<msg time="2025-08-24T10:47:52.052415" level="INFO">${password} = 1</msg>
 <var>${password}</var>
 <arg>${passwords_list[0]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-08-23T21:47:21.920492" elapsed="0.000448"/>
+<status status="PASS" start="2025-08-24T10:47:52.052161" elapsed="0.000287"/>
 </kw>
 <return>
 <value>${username}</value>
 <value>${password}</value>
-<status status="PASS" start="2025-08-23T21:47:21.921000" elapsed="0.000052"/>
+<status status="PASS" start="2025-08-24T10:47:52.052502" elapsed="0.000054"/>
 </return>
-<msg time="2025-08-23T21:47:21.921134" level="INFO">${username} = test1</msg>
-<msg time="2025-08-23T21:47:21.921173" level="INFO">${password} = 1</msg>
+<msg time="2025-08-24T10:47:52.052648" level="INFO">${username} = test1</msg>
+<msg time="2025-08-24T10:47:52.052686" level="INFO">${password} = 1</msg>
 <var>${username}</var>
 <var>${password}</var>
 <arg>All_Permission</arg>
-<status status="PASS" start="2025-08-23T21:47:21.852387" elapsed="0.068810"/>
+<status status="PASS" start="2025-08-24T10:47:52.032845" elapsed="0.019870"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-23T21:47:21.924044" level="INFO">Typing text 'test1' into text field '//input[@id='username']'.</msg>
+<msg time="2025-08-24T10:47:52.053085" level="INFO">Typing text 'test1' into text field '//input[@id='username']'.</msg>
 <arg>${username_txtbox}</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-23T21:47:21.921541" elapsed="1.073626"/>
+<status status="PASS" start="2025-08-24T10:47:52.052793" elapsed="1.036659"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-08-23T21:47:22.995793" level="INFO">Typing text '1' into text field '//input[@id='password']'.</msg>
+<msg time="2025-08-24T10:47:53.091409" level="INFO">Typing text '1' into text field '//input[@id='password']'.</msg>
 <arg>${password_txtbox}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-23T21:47:22.995438" elapsed="0.959652"/>
+<status status="PASS" start="2025-08-24T10:47:53.090354" elapsed="0.974206"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-08-23T21:47:23.955688" level="INFO">Clicking element '//button[contains(.,'Sign in')]'.</msg>
+<msg time="2025-08-24T10:47:54.066501" level="INFO">Clicking element '//button[contains(.,'Sign in')]'.</msg>
 <arg>${signin_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-23T21:47:23.955372" elapsed="0.645178"/>
+<status status="PASS" start="2025-08-24T10:47:54.065509" elapsed="0.674290"/>
 </kw>
-<status status="PASS" start="2025-08-23T21:47:21.852122" elapsed="2.748889"/>
+<status status="PASS" start="2025-08-24T10:47:52.032587" elapsed="2.707796"/>
 </kw>
 <kw name="Select tenant" owner="LoginPage">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${tenant_ddl}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-08-23T21:47:24.602614" elapsed="1.149687"/>
+<status status="PASS" start="2025-08-24T10:47:54.742625" elapsed="1.663381"/>
 </kw>
 <if>
 <branch type="IF" condition="${tetantID} == 1">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-08-23T21:47:25.753786" level="INFO">Clicking element '//select[@id='tenant-select']'.</msg>
+<msg time="2025-08-24T10:47:56.408537" level="INFO">Clicking element '//select[@id='tenant-select']'.</msg>
 <arg>${tenant_ddl}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-23T21:47:25.753361" elapsed="0.671177"/>
+<status status="PASS" start="2025-08-24T10:47:56.407850" elapsed="0.678222"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-08-23T21:47:26.426065" level="INFO">Clicking element '//option[@value='0001']'.</msg>
+<msg time="2025-08-24T10:47:57.086838" level="INFO">Clicking element '//option[@value='0001']'.</msg>
 <arg>${tetant0001_option}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-08-23T21:47:26.425388" elapsed="0.660402"/>
+<status status="PASS" start="2025-08-24T10:47:57.086476" elapsed="0.648863"/>
 </kw>
-<status status="PASS" start="2025-08-23T21:47:25.752791" elapsed="1.333553"/>
+<status status="PASS" start="2025-08-24T10:47:56.406828" elapsed="1.328642"/>
 </branch>
 <branch type="ELSE IF" condition="${tetantID} == 2">
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${tenant_ddl}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-08-23T21:47:27.086809" elapsed="0.000066"/>
+<status status="NOT RUN" start="2025-08-24T10:47:57.735691" elapsed="0.000064"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${tetant0002_option}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-08-23T21:47:27.086943" elapsed="0.000039"/>
+<status status="NOT RUN" start="2025-08-24T10:47:57.735835" elapsed="0.000045"/>
 </kw>
-<status status="NOT RUN" start="2025-08-23T21:47:27.086573" elapsed="0.000439"/>
+<status status="NOT RUN" start="2025-08-24T10:47:57.735522" elapsed="0.000398"/>
 </branch>
 <branch type="ELSE IF" condition="${tetantID} == 3">
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${tenant_ddl}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-08-23T21:47:27.087096" elapsed="0.000034"/>
+<status status="NOT RUN" start="2025-08-24T10:47:57.736019" elapsed="0.000046"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${tetant0003_option}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-08-23T21:47:27.087180" elapsed="0.000035"/>
+<status status="NOT RUN" start="2025-08-24T10:47:57.736133" elapsed="0.000040"/>
 </kw>
-<status status="NOT RUN" start="2025-08-23T21:47:27.087038" elapsed="0.000205"/>
+<status status="NOT RUN" start="2025-08-24T10:47:57.735949" elapsed="0.000260"/>
 </branch>
 <branch type="ELSE IF" condition="${tetantID} == 4">
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${tenant_ddl}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-08-23T21:47:27.087312" elapsed="0.000032"/>
+<status status="NOT RUN" start="2025-08-24T10:47:57.736306" elapsed="0.000042"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${tetant0004_option}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-08-23T21:47:27.087394" elapsed="0.000034"/>
+<status status="NOT RUN" start="2025-08-24T10:47:57.736431" elapsed="0.000042"/>
 </kw>
-<status status="NOT RUN" start="2025-08-23T21:47:27.087264" elapsed="0.000192"/>
+<status status="NOT RUN" start="2025-08-24T10:47:57.736242" elapsed="0.000268"/>
 </branch>
 <branch type="ELSE IF" condition="${tetantID} == 5">
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${tenant_ddl}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-08-23T21:47:27.087523" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-08-24T10:47:57.736603" elapsed="0.000041"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${tetant0005_option}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-08-23T21:47:27.087602" elapsed="0.000032"/>
+<status status="NOT RUN" start="2025-08-24T10:47:57.736710" elapsed="0.000039"/>
 </kw>
-<status status="NOT RUN" start="2025-08-23T21:47:27.087474" elapsed="0.000187"/>
+<status status="NOT RUN" start="2025-08-24T10:47:57.736540" elapsed="0.000244"/>
 </branch>
 <branch type="ELSE IF" condition="${tetantID} == 6">
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${tenant_ddl}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-08-23T21:47:27.087725" elapsed="0.000031"/>
+<status status="NOT RUN" start="2025-08-24T10:47:57.736880" elapsed="0.000048"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${tetant0006_option}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-08-23T21:47:27.087805" elapsed="0.000029"/>
+<status status="NOT RUN" start="2025-08-24T10:47:57.736998" elapsed="0.000039"/>
 </kw>
-<status status="NOT RUN" start="2025-08-23T21:47:27.087679" elapsed="0.000181"/>
+<status status="NOT RUN" start="2025-08-24T10:47:57.736808" elapsed="0.000264"/>
 </branch>
-<status status="PASS" start="2025-08-23T21:47:25.752714" elapsed="1.335165"/>
+<status status="PASS" start="2025-08-24T10:47:56.406716" elapsed="1.330380"/>
 </if>
 <arg>1</arg>
-<status status="PASS" start="2025-08-23T21:47:24.601886" elapsed="2.486038"/>
+<status status="PASS" start="2025-08-24T10:47:54.741506" elapsed="2.995630"/>
 </kw>
-<status status="PASS" start="2025-08-23T21:47:01.976198" elapsed="25.111898"/>
+<kw name="User go to Customer Management Approved screen" owner="Dashboard">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-24T10:47:57.737599" level="INFO">${desiredScreen} = Customer Management</msg>
+<var>${desiredScreen}</var>
+<arg>Customer Management</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-24T10:47:57.737476" elapsed="0.000186"/>
+</kw>
+<kw name="Get Left Menu Xpath" owner="DashboardLocators">
+<msg time="2025-08-24T10:47:57.737861" level="INFO">${leftMenu} = //span[contains(.,"Customer Management")]</msg>
+<var>${leftMenu}</var>
+<arg>${desiredScreen}</arg>
+<status status="PASS" start="2025-08-24T10:47:57.737738" elapsed="0.000161"/>
+</kw>
+<kw name="Get To Approved Screen" owner="DashboardLocators">
+<msg time="2025-08-24T10:47:57.738083" level="INFO">${Approved} = //li[@class="mb-2"]//div[contains(.,"Customer Management")]/following-sibling::ul//div[contains(.,"Approved")]</msg>
+<var>${Approved}</var>
+<arg>${desiredScreen}</arg>
+<status status="PASS" start="2025-08-24T10:47:57.737976" elapsed="0.000143"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-24T10:47:57.738329" level="INFO">Clicking element '//span[contains(.,"Customer Management")]'.</msg>
+<arg>${leftMenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-24T10:47:57.738192" elapsed="0.633395"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-24T10:47:58.372115" level="INFO">Clicking element '//li[@class="mb-2"]//div[contains(.,"Customer Management")]/following-sibling::ul//div[contains(.,"Approved")]'.</msg>
+<arg>${Approved}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-24T10:47:58.371822" elapsed="0.651682"/>
+</kw>
+<status status="PASS" start="2025-08-24T10:47:57.737293" elapsed="1.286650"/>
+</kw>
+<kw name="Sort collumn by Updated" owner="SortingElement">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=//td[8]</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-24T10:47:59.025301" elapsed="21.744971"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-08-24T10:48:21.080813" level="INFO">${updatedTime} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="29a900adb3953a6d756670117c089c18", element="f.8063ACAA041D6E482AF969E51E18DCD3.d.78B7C71D4D857DBEB2DF779A4F6456B9.e.92")&gt;, &lt;selenium.webdriv...</msg>
+<var>${updatedTime}</var>
+<arg>//td[8]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-08-24T10:48:20.770773" elapsed="0.310458"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-08-24T10:48:21.082591" level="INFO">${updatedTime_List} = []</msg>
+<var>${updatedTime_List}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-08-24T10:48:21.081865" elapsed="0.000913"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-24T10:48:21.403814" level="INFO">${text} = 2025-08-23, 01:08:24</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-24T10:48:21.083788" elapsed="0.320441"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${updatedTime_List}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-08-24T10:48:21.404979" elapsed="0.000892"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-24T10:48:21.406793" level="INFO">['2025-08-23, 01:08:24']</msg>
+<arg>${updatedTime_List}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-24T10:48:21.406293" elapsed="0.000660"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="29a900adb3953a6d756670117c089c18", element="f.8063ACAA041D6E482AF969E51E18DCD3.d.78B7C71D4D857DBEB2DF779A4F6456B9.e.92")&gt;</var>
+<status status="PASS" start="2025-08-24T10:48:21.083512" elapsed="0.323540"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-24T10:48:21.720995" level="INFO">${text} = 2025-08-23, 01:07:20</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-24T10:48:21.407601" elapsed="0.313807"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${updatedTime_List}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-08-24T10:48:21.722366" elapsed="0.000784"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-24T10:48:21.723768" level="INFO">['2025-08-23, 01:08:24', '2025-08-23, 01:07:20']</msg>
+<arg>${updatedTime_List}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-24T10:48:21.723476" elapsed="0.000439"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="29a900adb3953a6d756670117c089c18", element="f.8063ACAA041D6E482AF969E51E18DCD3.d.78B7C71D4D857DBEB2DF779A4F6456B9.e.93")&gt;</var>
+<status status="PASS" start="2025-08-24T10:48:21.407324" elapsed="0.316690"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-24T10:48:22.036681" level="INFO">${text} = 2025-08-23, 00:02:40</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-24T10:48:21.724544" elapsed="0.312517"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${updatedTime_List}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-08-24T10:48:22.037623" elapsed="0.000816"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-24T10:48:22.039275" level="INFO">['2025-08-23, 01:08:24', '2025-08-23, 01:07:20', '2025-08-23, 00:02:40']</msg>
+<arg>${updatedTime_List}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-24T10:48:22.038790" elapsed="0.000646"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="29a900adb3953a6d756670117c089c18", element="f.8063ACAA041D6E482AF969E51E18DCD3.d.78B7C71D4D857DBEB2DF779A4F6456B9.e.94")&gt;</var>
+<status status="PASS" start="2025-08-24T10:48:21.724245" elapsed="0.315317"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-24T10:48:22.352390" level="INFO">${text} = 2025-08-23, 00:02:09</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-24T10:48:22.040147" elapsed="0.312673"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${updatedTime_List}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-08-24T10:48:22.353475" elapsed="0.000930"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-24T10:48:22.355199" level="INFO">['2025-08-23, 01:08:24', '2025-08-23, 01:07:20', '2025-08-23, 00:02:40', '2025-08-23, 00:02:09']</msg>
+<arg>${updatedTime_List}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-24T10:48:22.354781" elapsed="0.000586"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="29a900adb3953a6d756670117c089c18", element="f.8063ACAA041D6E482AF969E51E18DCD3.d.78B7C71D4D857DBEB2DF779A4F6456B9.e.95")&gt;</var>
+<status status="PASS" start="2025-08-24T10:48:22.039786" elapsed="0.315704"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-24T10:48:22.668355" level="INFO">${text} = 2025-08-21, 16:42:55</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-24T10:48:22.356056" elapsed="0.312704"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${updatedTime_List}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-08-24T10:48:22.669449" elapsed="0.000946"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-24T10:48:22.671250" level="INFO">['2025-08-23, 01:08:24', '2025-08-23, 01:07:20', '2025-08-23, 00:02:40', '2025-08-23, 00:02:09', '2025-08-21, 16:42:55']</msg>
+<arg>${updatedTime_List}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-24T10:48:22.670796" elapsed="0.000667"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="29a900adb3953a6d756670117c089c18", element="f.8063ACAA041D6E482AF969E51E18DCD3.d.78B7C71D4D857DBEB2DF779A4F6456B9.e.96")&gt;</var>
+<status status="PASS" start="2025-08-24T10:48:22.355714" elapsed="0.315875"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-24T10:48:22.985662" level="INFO">${text} = 2025-08-21, 14:51:27</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-24T10:48:22.672154" elapsed="0.313925"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${updatedTime_List}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-08-24T10:48:22.986699" elapsed="0.000788"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-24T10:48:22.988045" level="INFO">['2025-08-23, 01:08:24', '2025-08-23, 01:07:20', '2025-08-23, 00:02:40', '2025-08-23, 00:02:09', '2025-08-21, 16:42:55', '2025-08-21, 14:51:27']</msg>
+<arg>${updatedTime_List}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-24T10:48:22.987731" elapsed="0.000466"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="29a900adb3953a6d756670117c089c18", element="f.8063ACAA041D6E482AF969E51E18DCD3.d.78B7C71D4D857DBEB2DF779A4F6456B9.e.97")&gt;</var>
+<status status="PASS" start="2025-08-24T10:48:22.671818" elapsed="0.316492"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-24T10:48:23.299357" level="INFO">${text} = 2025-08-21, 10:50:41</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-24T10:48:22.988835" elapsed="0.310945"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${updatedTime_List}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-08-24T10:48:23.300382" elapsed="0.000877"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-24T10:48:23.302013" level="INFO">['2025-08-23, 01:08:24', '2025-08-23, 01:07:20', '2025-08-23, 00:02:40', '2025-08-23, 00:02:09', '2025-08-21, 16:42:55', '2025-08-21, 14:51:27', '2025-08-21, 10:50:41']</msg>
+<arg>${updatedTime_List}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-24T10:48:23.301545" elapsed="0.000723"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="29a900adb3953a6d756670117c089c18", element="f.8063ACAA041D6E482AF969E51E18DCD3.d.78B7C71D4D857DBEB2DF779A4F6456B9.e.98")&gt;</var>
+<status status="PASS" start="2025-08-24T10:48:22.988527" elapsed="0.313893"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-24T10:48:23.612953" level="INFO">${text} = 2025-08-20, 15:15:10</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-24T10:48:23.303013" elapsed="0.310379"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${updatedTime_List}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-08-24T10:48:23.614054" elapsed="0.000854"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-24T10:48:23.615746" level="INFO">['2025-08-23, 01:08:24', '2025-08-23, 01:07:20', '2025-08-23, 00:02:40', '2025-08-23, 00:02:09', '2025-08-21, 16:42:55', '2025-08-21, 14:51:27', '2025-08-21, 10:50:41', '2025-08-20, 15:15:10']</msg>
+<arg>${updatedTime_List}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-24T10:48:23.615241" elapsed="0.000678"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="29a900adb3953a6d756670117c089c18", element="f.8063ACAA041D6E482AF969E51E18DCD3.d.78B7C71D4D857DBEB2DF779A4F6456B9.e.99")&gt;</var>
+<status status="PASS" start="2025-08-24T10:48:23.302662" elapsed="0.313384"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-24T10:48:23.931394" level="INFO">${text} = 2025-08-19, 16:05:51</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-24T10:48:23.616730" elapsed="0.315090"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${updatedTime_List}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-08-24T10:48:23.932475" elapsed="0.000840"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-24T10:48:23.933928" level="INFO">['2025-08-23, 01:08:24', '2025-08-23, 01:07:20', '2025-08-23, 00:02:40', '2025-08-23, 00:02:09', '2025-08-21, 16:42:55', '2025-08-21, 14:51:27', '2025-08-21, 10:50:41', '2025-08-20, 15:15:10', '2025-08-19, 16:05:51']</msg>
+<arg>${updatedTime_List}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-24T10:48:23.933569" elapsed="0.000543"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="29a900adb3953a6d756670117c089c18", element="f.8063ACAA041D6E482AF969E51E18DCD3.d.78B7C71D4D857DBEB2DF779A4F6456B9.e.100")&gt;</var>
+<status status="PASS" start="2025-08-24T10:48:23.616453" elapsed="0.317774"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-24T10:48:24.245271" level="INFO">${text} = 2025-08-18, 15:43:22</msg>
+<var>${text}</var>
+<arg>${el}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-24T10:48:23.934801" elapsed="0.310880"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${updatedTime_List}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-08-24T10:48:24.246283" elapsed="0.000939"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-08-24T10:48:24.248145" level="INFO">['2025-08-23, 01:08:24', '2025-08-23, 01:07:20', '2025-08-23, 00:02:40', '2025-08-23, 00:02:09', '2025-08-21, 16:42:55', '2025-08-21, 14:51:27', '2025-08-21, 10:50:41', '2025-08-20, 15:15:10', '2025-08-19, 16:05:51', '2025-08-18, 15:43:22']</msg>
+<arg>${updatedTime_List}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-08-24T10:48:24.247622" elapsed="0.000832"/>
+</kw>
+<var name="${el}">&lt;selenium.webdriver.remote.webelement.WebElement (session="29a900adb3953a6d756670117c089c18", element="f.8063ACAA041D6E482AF969E51E18DCD3.d.78B7C71D4D857DBEB2DF779A4F6456B9.e.101")&gt;</var>
+<status status="PASS" start="2025-08-24T10:48:23.934450" elapsed="0.314221"/>
+</iter>
+<var>${el}</var>
+<value>@{updatedTime}</value>
+<status status="PASS" start="2025-08-24T10:48:21.083006" elapsed="3.165790"/>
+</for>
+<kw name="Copy List" owner="Collections">
+<msg time="2025-08-24T10:48:24.249403" level="INFO">${sortedList} = ['2025-08-23, 01:08:24', '2025-08-23, 01:07:20', '2025-08-23, 00:02:40', '2025-08-23, 00:02:09', '2025-08-21, 16:42:55', '2025-08-21, 14:51:27', '2025-08-21, 10:50:41', '2025-08-20, 15:15:10', '2025-0...</msg>
+<var>${sortedList}</var>
+<arg>${updatedTime_List}</arg>
+<doc>Returns a copy of the given list.</doc>
+<status status="PASS" start="2025-08-24T10:48:24.249022" elapsed="0.000588"/>
+</kw>
+<kw name="Sort List" owner="Collections">
+<arg>${sortedList}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" start="2025-08-24T10:48:24.249800" elapsed="0.000345"/>
+</kw>
+<kw name="Reverse List" owner="Collections">
+<arg>${sortedList}</arg>
+<doc>Reverses the given list in place.</doc>
+<status status="PASS" start="2025-08-24T10:48:24.250344" elapsed="0.000382"/>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${updatedTime_List}</arg>
+<arg>${sortedList}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="PASS" start="2025-08-24T10:48:24.250919" elapsed="0.000339"/>
+</kw>
+<status status="PASS" start="2025-08-24T10:47:59.024610" elapsed="25.226783"/>
+</kw>
+<status status="PASS" start="2025-08-24T10:47:28.394278" elapsed="55.857454"/>
 </test>
-<status status="PASS" start="2025-08-23T21:47:01.869782" elapsed="25.224173"/>
+<status status="PASS" start="2025-08-24T10:47:28.271615" elapsed="55.986036"/>
 </suite>
-<status status="PASS" start="2025-08-23T21:47:01.868747" elapsed="25.226791"/>
+<status status="PASS" start="2025-08-24T10:47:28.270680" elapsed="55.991015"/>
 </suite>
-<status status="PASS" start="2025-08-23T21:47:01.859205" elapsed="25.237461"/>
+<status status="PASS" start="2025-08-24T10:47:28.262456" elapsed="56.010584"/>
 </suite>
 <statistics>
 <total>
@@ -257,7 +571,7 @@
 <suite>
 <stat name="Robot Framework Web" id="s1" pass="1" fail="0" skip="0">Robot Framework Web</stat>
 <stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">Robot Framework Web.Tests</stat>
-<stat name="01 Login" id="s1-s1-s1" pass="1" fail="0" skip="0">Robot Framework Web.Tests.01 Login</stat>
+<stat name="02 CustomerMangement" id="s1-s1-s1" pass="1" fail="0" skip="0">Robot Framework Web.Tests.02 CustomerMangement</stat>
 </suite>
 </statistics>
 <errors>

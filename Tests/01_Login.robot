@@ -14,3 +14,8 @@ User login with Wrong Account information
 User login successfull with all permission account
     Login with All Permission
     Select tenant    1
+
+User can log out successfully
+    User click account menu
+    User click on log out button
+    User see login screen

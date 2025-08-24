@@ -2,6 +2,7 @@
 Library    SeleniumLibrary
 Library    OperatingSystem
 Variables    ../Locators/LoginPageLocators.py
+Variables    ../Locators/DashboardLocators.py
 Resource    ../Ultis/ReadJson.robot
 
 *** Keywords ***
@@ -62,6 +63,15 @@ Login with wrong account
 User see error message
     Wait Until Element Is Visible    ${error_message}
     Element Text Should Be    ${error_message}    Request failed with status code 400
+
+User click account menu
+    Click Element    ${account_menu_btn}
+
+User click on log out button
+    Click Element    ${logout_btn}
+
+User see login screen
+    Element Should Be Visible    ${signin_btn}
 
 Select tenant
     [Arguments]    ${tetantID}
